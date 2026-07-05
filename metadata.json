@@ -1,0 +1,6 @@
+{
+  "name": "MNQE SaaS Platform and Domain Showcase",
+  "description": "A premium marketing and showcase website for the MNQE analytics platform, highlighting the domain name for sale.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

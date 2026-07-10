@@ -27,6 +27,25 @@ interface CaseStudy {
   description: string;
 }
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    {
+      '@type': 'ListItem',
+      'position': 1,
+      'name': 'Home',
+      'item': 'https://mnqe.com'
+    },
+    {
+      '@type': 'ListItem',
+      'position': 2,
+      'name': 'Customer Testimonials',
+      'item': 'https://mnqe.com/customers'
+    }
+  ]
+};
+
 export default function CustomersPage() {
   const TESTIMONIALS: Testimonial[] = [
     {
@@ -93,25 +112,6 @@ export default function CustomersPage() {
       description: 'OptimaCQ purchased the MNQE domain assets and static layout codebases to host their own white-label reporting node, eliminating trailing licensing costs forever.'
     }
   ];
-
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    'itemListElement': [
-      {
-        '@type': 'ListItem',
-        'position': 1,
-        'name': 'Home',
-        'item': 'https://mnqe.com'
-      },
-      {
-        '@type': 'ListItem',
-        'position': 2,
-        'name': 'Customer Testimonials',
-        'item': 'https://mnqe.com/customers'
-      }
-    ]
-  };
 
   return (
     <>

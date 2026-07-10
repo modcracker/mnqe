@@ -25,82 +25,82 @@ interface CompanyValue {
   description: string;
 }
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    {
+      '@type': 'ListItem',
+      'position': 1,
+      'name': 'Home',
+      'item': 'https://mnqe.com'
+    },
+    {
+      '@type': 'ListItem',
+      'position': 2,
+      'name': 'About Us',
+      'item': 'https://mnqe.com/about'
+    }
+  ]
+};
+
+const TEAM: TeamMember[] = [
+  {
+    name: 'May Levy',
+    title: 'Founder & Principal SRE Architect',
+    bio: 'Over 12 years coordinating distributed cloud clusters, heavy telemetry pipelines, and sovereign server architectures.',
+    initials: 'ML',
+  },
+  {
+    name: 'Alex Baker',
+    title: 'Lead Operations Engineer',
+    bio: 'Focused on multi-threaded database pipelines, sub-millisecond query compilations, and memory-safe caching layers.',
+    initials: 'AB',
+  },
+  {
+    name: 'Jordan Chen',
+    title: 'Head of Dashboard Experience',
+    bio: 'Crafting beautiful, reactive UI widgets, custom charts, drag-and-drop boards, and responsive layouts.',
+    initials: 'JC',
+  },
+  {
+    name: 'Emily White',
+    title: 'Lead Interface Designer',
+    bio: 'Obsessed with geometric visual aesthetics, custom color hierarchies, typography pairings, and clean workspace grids.',
+    initials: 'EW',
+  },
+  {
+    name: 'Taylor Kim',
+    title: 'Communications & Portfolio Director',
+    bio: 'Managing corporate partnerships, domain transfers, and secure GoDaddy Escrow transactions with institutional stakeholders.',
+    initials: 'TK',
+  }
+];
+
+const VALUES: CompanyValue[] = [
+  {
+    icon: <Zap className="w-5 h-5 text-white" />,
+    title: 'Blazing Ingestion Velocity',
+    description: 'We believe real-time metadata should be delivered instantly. Delay packets represents lost performance potential.'
+  },
+  {
+    icon: <Lock className="w-5 h-5 text-white" />,
+    title: 'Cryptographic Privacy',
+    description: 'Sovereign ownership rights start with cryptographic ledger validations. We isolate telemetry to prevent tracker leakages.'
+  },
+  {
+    icon: <Award className="w-5 h-5 text-white" />,
+    title: 'Pristine Materiality',
+    description: 'Software development is a craft. Every pixel ratio and responsive flex container must reinforce a harmonious experience.'
+  },
+  {
+    icon: <Compass className="w-5 h-5 text-white" />,
+    title: 'Sovereign Brand Power',
+    description: 'A 4-letter brand represents extreme authority. We maintain the highest trust-rating indexes across digital domains.'
+  }
+];
+
 export default function AboutPage() {
-  const TEAM: TeamMember[] = [
-    {
-      name: 'May Levy',
-      title: 'Founder & Principal SRE Architect',
-      bio: 'Over 12 years coordinating distributed cloud clusters, heavy telemetry pipelines, and sovereign server architectures.',
-      initials: 'ML',
-    },
-    {
-      name: 'Alex Baker',
-      title: 'Lead Operations Engineer',
-      bio: 'Focused on multi-threaded database pipelines, sub-millisecond query compilations, and memory-safe caching layers.',
-      initials: 'AB',
-    },
-    {
-      name: 'Jordan Chen',
-      title: 'Head of Dashboard Experience',
-      bio: 'Crafting beautiful, reactive UI widgets, custom charts, drag-and-drop boards, and responsive layouts.',
-      initials: 'JC',
-    },
-    {
-      name: 'Emily White',
-      title: 'Lead Interface Designer',
-      bio: 'Obsessed with geometric visual aesthetics, custom color hierarchies, typography pairings, and clean workspace grids.',
-      initials: 'EW',
-    },
-    {
-      name: 'Taylor Kim',
-      title: 'Communications & Portfolio Director',
-      bio: 'Managing corporate partnerships, domain transfers, and secure GoDaddy Escrow transactions with institutional stakeholders.',
-      initials: 'TK',
-    }
-  ];
-
-  const VALUES: CompanyValue[] = [
-    {
-      icon: <Zap className="w-5 h-5 text-white" />,
-      title: 'Blazing Ingestion Velocity',
-      description: 'We believe real-time metadata should be delivered instantly. Delay packets represents lost performance potential.'
-    },
-    {
-      icon: <Lock className="w-5 h-5 text-white" />,
-      title: 'Cryptographic Privacy',
-      description: 'Sovereign ownership rights start with cryptographic ledger validations. We isolate telemetry to prevent tracker leakages.'
-    },
-    {
-      icon: <Award className="w-5 h-5 text-white" />,
-      title: 'Pristine Materiality',
-      description: 'Software development is a craft. Every pixel ratio and responsive flex container must reinforce a harmonious experience.'
-    },
-    {
-      icon: <Compass className="w-5 h-5 text-white" />,
-      title: 'Sovereign Brand Power',
-      description: 'A 4-letter brand represents extreme authority. We maintain the highest trust-rating indexes across digital domains.'
-    }
-  ];
-
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    'itemListElement': [
-      {
-        '@type': 'ListItem',
-        'position': 1,
-        'name': 'Home',
-        'item': 'https://mnqe.com'
-      },
-      {
-        '@type': 'ListItem',
-        'position': 2,
-        'name': 'About Us',
-        'item': 'https://mnqe.com/about'
-      }
-    ]
-  };
-
   return (
     <>
       <script

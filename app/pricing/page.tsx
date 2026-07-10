@@ -31,6 +31,61 @@ interface FAQItem {
   answer: string;
 }
 
+const FAQS: FAQItem[] = [
+  {
+    question: 'How is the domain MNQE.com transferred after purchase?',
+    answer: 'The acquisition process is fully secure and handled via GoDaddy Escrow or Escrow.com. Upon receipt of funds, the domain is immediately released and pushed to your registrar account within 24 hours.'
+  },
+  {
+    question: 'Is there a free trial for the analytics platform?',
+    answer: 'Yes! Fictional subscribers can sign up local testing sandboxes for 14 days with zero credit card info. However, since this site is a domain portfolio showcase, live cloud infrastructure is currently suspended.'
+  },
+  {
+    question: 'Can I cancel my subscription billing at any time?',
+    answer: 'Our subscription models run on month-to-month contracts. You can easily terminate your billing from your account control workspace at any time. There are no cancellation penalties or hidden platform fees.'
+  },
+  {
+    question: 'Are there customizable licensing models for agencies?',
+    answer: 'Absolutely. Acquiring the brand and domain MNQE.com allows your agency to repackage or host the system under your sovereign control. This eliminates trailing SaaS costs completely.'
+  },
+  {
+    question: 'What is the refund and SLA policy?',
+    answer: 'We provide a 100% money-back guarantee within 30 days of license activation. Our edge clusters support a 99.9% availability SLA, backed by automated regional failovers.'
+  }
+];
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    {
+      '@type': 'ListItem',
+      'position': 1,
+      'name': 'Home',
+      'item': 'https://mnqe.com'
+    },
+    {
+      '@type': 'ListItem',
+      'position': 2,
+      'name': 'Pricing & Acquisition',
+      'item': 'https://mnqe.com/pricing'
+    }
+  ]
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': FAQS.map(faq => ({
+    '@type': 'Question',
+    'name': faq.question,
+    'acceptedAnswer': {
+      '@type': 'Answer',
+      'text': faq.answer
+    }
+  }))
+};
+
 export default function PricingPage() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
@@ -90,63 +145,8 @@ export default function PricingPage() {
     }
   ];
 
-  const FAQS: FAQItem[] = [
-    {
-      question: 'How is the domain MNQE.com transferred after purchase?',
-      answer: 'The acquisition process is fully secure and handled via GoDaddy Escrow or Escrow.com. Upon receipt of funds, the domain is immediately released and pushed to your registrar account within 24 hours.'
-    },
-    {
-      question: 'Is there a free trial for the analytics platform?',
-      answer: 'Yes! Fictional subscribers can sign up local testing sandboxes for 14 days with zero credit card info. However, since this site is a domain portfolio showcase, live cloud infrastructure is currently suspended.'
-    },
-    {
-      question: 'Can I cancel my subscription billing at any time?',
-      answer: 'Our subscription models run on month-to-month contracts. You can easily terminate your billing from your account control workspace at any time. There are no cancellation penalties or hidden platform fees.'
-    },
-    {
-      question: 'Are there customizable licensing models for agencies?',
-      answer: 'Absolutely. Acquiring the brand and domain MNQE.com allows your agency to repackage or host the system under your sovereign control. This eliminates trailing SaaS costs completely.'
-    },
-    {
-      question: 'What is the refund and SLA policy?',
-      answer: 'We provide a 100% money-back guarantee within 30 days of license activation. Our edge clusters support a 99.9% availability SLA, backed by automated regional failovers.'
-    }
-  ];
-
   const togglesFaq = (index: number) => {
     setActiveFaq(prev => prev === index ? null : index);
-  };
-
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    'itemListElement': [
-      {
-        '@type': 'ListItem',
-        'position': 1,
-        'name': 'Home',
-        'item': 'https://mnqe.com'
-      },
-      {
-        '@type': 'ListItem',
-        'position': 2,
-        'name': 'Pricing & Acquisition',
-        'item': 'https://mnqe.com/pricing'
-      }
-    ]
-  };
-
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    'mainEntity': FAQS.map(faq => ({
-      '@type': 'Question',
-      'name': faq.question,
-      'acceptedAnswer': {
-        '@type': 'Answer',
-        'text': faq.answer
-      }
-    }))
   };
 
   return (

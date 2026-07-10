@@ -29,8 +29,8 @@ const getMetadataBase = (): string => {
 };
 
 export const metadata: Metadata = {
-  title: 'MNQE | Premium Web Analytics & Dashboard Platform',
-  description: 'MNQE delivers real-time analytics reimagined. Modern customizable dashboards, enterprise integrations, and seamless user collaboration.',
+  title: 'Buy MNQE Domain | Premium Monique Vanity Domain for Sale',
+  description: 'Buy MNQE domain today! Secure MNQE.com, the ultimate Monique vanity domain and ultra-rare 4-letter LLLL .com domain for sale, currently showcasing an elite analytics platform.',
   metadataBase: new URL(getMetadataBase()),
   alternates: {
     canonical: '/',
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'MNQE | Premium Analytics Dashboard Platform',
-    description: 'Real-time analytics, reimagined. A modern premium dashboard platform showcasing MNQE domain for purchase.',
+    title: 'Buy MNQE Domain | Premium Monique Vanity Domain for Sale',
+    description: 'Buy MNQE domain today! Secure MNQE.com, the ultimate Monique vanity domain and ultra-rare 4-letter LLLL .com domain for sale.',
     url: '/',
     siteName: 'MNQE Analytics',
     images: [
@@ -64,8 +64,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MNQE | Premium Analytics Dashboard Platform',
-    description: 'Real-time analytics, reimagined. A modern premium dashboard platform showcasing MNQE domain for purchase.',
+    title: 'Buy MNQE Domain | Premium Monique Vanity Domain for Sale',
+    description: 'Buy MNQE domain today! Secure MNQE.com, the ultimate Monique vanity domain and ultra-rare 4-letter LLLL .com domain for sale.',
     images: ['/opengraph-image'],
   },
 };

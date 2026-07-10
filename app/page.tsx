@@ -15,6 +15,70 @@ import FadeIn from '@/components/FadeIn';
 import DashboardMockup from '@/components/DashboardMockup';
 import { BrandBackgroundArt } from '@/components/BrandArtwork';
 
+// JSON-LD structured data for Home Page (SoftwareApplication and BreadcrumbList)
+const softwareSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  'name': 'MNQE Analytics Platform',
+  'operatingSystem': 'All',
+  'applicationCategory': 'BusinessApplication',
+  'description': 'Real-time analytics reimagined. Premium web analytics, custom visualization dashboards, and secure data orchestration.',
+  'offers': {
+    '@type': 'Offer',
+    'price': '29.00',
+    'priceCurrency': 'USD'
+  },
+  'aggregateRating': {
+    '@type': 'AggregateRating',
+    'ratingValue': '4.95',
+    'ratingCount': '14302'
+  }
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    {
+      '@type': 'ListItem',
+      'position': 1,
+      'name': 'Home',
+      'item': 'https://mnqe.com'
+    }
+  ]
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    {
+      '@type': 'Question',
+      'name': 'How can I buy the MNQE domain?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'You can buy the MNQE domain (MNQE.com) securely via major domain escrow services like GoDaddy Escrow or Escrow.com. Once payment is confirmed, the domain is pushed directly to your registrar account within 24 hours.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Why is MNQE.com a premium Monique vanity domain?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'MNQE.com is a highly coveted 4-letter LLLL .com domain, representing an exact-match acronym or vanity name for Monique, Monique-related brands, or enterprise tech initiatives.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Is MNQE.com currently listed as a domain for sale?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Yes, MNQE.com is an active premium domain for sale. It is currently hosting a high-fidelity analytics dashboard concept to demonstrate its business viability, but the domain asset itself is fully available for acquisition.'
+      }
+    }
+  ]
+};
+
 export default function Home() {
   const prefersReduced = useSafeReducedMotion();
   const { scrollY } = useScroll();
@@ -51,42 +115,11 @@ export default function Home() {
     }
   ];
 
-  // JSON-LD structured data for Home Page (SoftwareApplication and BreadcrumbList)
-  const softwareSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    'name': 'MNQE Analytics Platform',
-    'operatingSystem': 'All',
-    'applicationCategory': 'BusinessApplication',
-    'description': 'Real-time analytics reimagined. Premium web analytics, custom visualization dashboards, and secure data orchestration.',
-    'offers': {
-      '@type': 'Offer',
-      'price': '29.00',
-      'priceCurrency': 'USD'
-    },
-    'aggregateRating': {
-      '@type': 'AggregateRating',
-      'ratingValue': '4.95',
-      'ratingCount': '14302'
-    }
-  };
-
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    'itemListElement': [
-      {
-        '@type': 'ListItem',
-        'position': 1,
-        'name': 'Home',
-        'item': 'https://mnqe.com'
-      }
-    ]
-  };
-
   return (
     <>
       {/* Schema Injection */}
+      <title>Buy MNQE Domain | Premium Monique Vanity Domain for Sale</title>
+      <meta name="description" content="Buy MNQE domain today! Secure MNQE.com, the ultimate Monique vanity domain and ultra-rare 4-letter LLLL .com domain for sale." />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
@@ -94,6 +127,10 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       <Header />
@@ -128,16 +165,20 @@ export default function Home() {
             </FadeIn>
 
             {/* Heading */}
-            <FadeIn delay={0.2} y={20} className="max-w-4xl">
-              <h1 className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight md:leading-[1.12]">
-                Real-time analytics, <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6D5DFC] to-[#a295ff]">reimagined</span> for teams.
+            <FadeIn delay={0.2} y={20} className="max-w-5xl">
+              <h1 
+                id="hero-heading"
+                aria-label="Buy MNQE domain - Premium Monique vanity domain for sale"
+                className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight md:leading-[1.12]"
+              >
+                Buy <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6D5DFC] to-[#a295ff]">MNQE domain</span> — Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6D5DFC] to-[#a295ff]">Monique vanity domain</span> and LLLL .com <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6D5DFC] to-[#a295ff]">domain for sale</span>
               </h1>
             </FadeIn>
 
             {/* Subheading */}
-            <FadeIn delay={0.3} y={20} className="max-w-2xl mt-6">
-              <p className="text-gray-400 text-base md:text-lg leading-relaxed">
-                Unlock actionable performance patterns in real-time. Power telemetry tracking at scale, build customizable dashboard overlays, and stream logs without queuing delays.
+            <FadeIn delay={0.3} y={20} className="max-w-3xl mt-6">
+              <p className="text-gray-200 text-base md:text-lg leading-relaxed">
+                Looking to buy MNQE domain? Secure the ultimate Monique vanity domain asset. MNQE.com is an ultra-rare 4-letter LLLL .com domain for sale, showcasing a modern elite analytics platform concept. Perfect for prestige personal branding, professional custom emails, and corporate web portals.
               </p>
             </FadeIn>
 
@@ -182,7 +223,7 @@ export default function Home() {
         >
           <div className="max-w-7xl mx-auto">
             <FadeIn y={10} className="text-center mb-8">
-              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest leading-relaxed">
+              <p className="text-xs font-bold text-gray-600 uppercase tracking-widest leading-relaxed">
                 Empowering analytics pipelines at leading technology agencies
               </p>
             </FadeIn>
@@ -264,7 +305,7 @@ export default function Home() {
             {/* Left side: Graphics/Mockup */}
             <FadeIn y={20} className="order-2 lg:order-1">
               <div className="relative p-2 rounded-2xl bg-white border border-gray-200 shadow-xl overflow-hidden bg-mesh-light grid-overlay-light">
-                <div className="bg-gray-100/80 px-4 py-2 border-b border-gray-200 flex items-center gap-1.5 select-none text-[10px] font-mono text-gray-400">
+                <div className="bg-gray-100/80 px-4 py-2 border-b border-gray-200 flex items-center gap-1.5 select-none text-[10px] font-mono text-gray-600">
                   <span className="w-2.5 h-2.5 rounded-full bg-gray-300" />
                   <span className="w-2.5 h-2.5 rounded-full bg-gray-300" />
                   <span className="w-2.5 h-2.5 rounded-full bg-gray-300" />
@@ -274,7 +315,7 @@ export default function Home() {
                 {/* SVG Mockup */}
                 <div className="p-6 flex flex-col gap-5 min-h-[300px] justify-between">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold uppercase tracking-wider text-gray-400">Cohort Retention</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-gray-600">Cohort Retention</span>
                     <span className="text-xs font-bold text-gray-800 bg-gray-100 px-2 py-0.5 rounded-full border border-gray-200">14-Day Cycle</span>
                   </div>
 
@@ -289,7 +330,7 @@ export default function Home() {
                               ? 'bg-[#6D5DFC]/60 text-white' 
                               : i % 5 === 0 
                                 ? 'bg-indigo-300 text-gray-700' 
-                                : 'bg-gray-100 text-gray-400'
+                                : 'bg-gray-100 text-gray-600'
                         }`}
                       >
                         <span className="p-1">{((i * 17 + 41) % 41) + 55}%</span>
@@ -297,7 +338,7 @@ export default function Home() {
                     ))}
                   </div>
 
-                  <div className="flex justify-between items-center text-xs border-t border-gray-100 pt-4 text-gray-400">
+                  <div className="flex justify-between items-center text-xs border-t border-gray-100 pt-4 text-gray-600">
                     <span>Direct Escrow Transfer Enabled</span>
                     <span className="font-bold text-[#6D5DFC]">99.9% Uptime SLA</span>
                   </div>

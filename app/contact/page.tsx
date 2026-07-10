@@ -11,6 +11,25 @@ import Footer from '@/components/Footer';
 import FadeIn from '@/components/FadeIn';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://mnqe.com/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Contact',
+      item: 'https://mnqe.com/contact',
+    },
+  ],
+};
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
@@ -67,25 +86,6 @@ export default function ContactPage() {
       setTxHash(`MNQE-${Math.random().toString(36).substring(2, 10).toUpperCase()}`);
       setIsSuccess(true);
     }, 1200);
-  };
-
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: 'https://mnqe.com/',
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Contact',
-        item: 'https://mnqe.com/contact',
-      },
-    ],
   };
 
   return (

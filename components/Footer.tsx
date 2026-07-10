@@ -79,6 +79,10 @@ export default function Footer() {
                 The Team
                 <span className="absolute bottom-0 left-0 h-[1.5px] w-0 bg-[#6D5DFC] transition-all duration-250 group-hover:w-full" />
               </Link>
+              <Link href="/monique" className="text-[#6D5DFC] hover:text-white font-medium transition-colors duration-200 relative group w-fit">
+                Monique & MNQE Hub
+                <span className="absolute bottom-0 left-0 h-[1.5px] w-0 bg-[#6D5DFC] transition-all duration-250 group-hover:w-full" />
+              </Link>
               <Link href="/contact" className="text-[#6D5DFC] hover:text-white font-medium transition-colors duration-200 relative group w-fit">
                 Get In Touch
                 <span className="absolute bottom-0 left-0 h-[1.5px] w-0 bg-[#6D5DFC] transition-all duration-250 group-hover:w-full" />

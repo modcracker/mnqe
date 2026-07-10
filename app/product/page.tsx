@@ -16,46 +16,46 @@ import DashboardMockup from '@/components/DashboardMockup';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { BrandBackgroundArt } from '@/components/BrandArtwork';
 
+// Product schema
+const softwareSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  'name': 'MNQE Enterprise Suite',
+  'operatingSystem': 'All',
+  'applicationCategory': 'BusinessApplication',
+  'description': 'Advanced real-time web telemetry system tracking cohort engagement rates securely with low-latency caches.',
+  'offers': {
+    '@type': 'Offer',
+    'price': '99.00',
+    'priceCurrency': 'USD'
+  }
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mnqe.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Product Overview",
+      "item": "https://mnqe.com/product"
+    }
+  ]
+};
+
 export default function ProductPage() {
   const prefersReduced = useSafeReducedMotion();
   const { scrollY } = useScroll();
   
   // Parallax translation for the background behind the main hero mockup (approx 35%)
   const yBg = useTransform(scrollY, [0, 600], [0, 200]);
-
-  // Product schema
-  const softwareSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    'name': 'MNQE Enterprise Suite',
-    'operatingSystem': 'All',
-    'applicationCategory': 'BusinessApplication',
-    'description': 'Advanced real-time web telemetry system tracking cohort engagement rates securely with low-latency caches.',
-    'offers': {
-      '@type': 'Offer',
-      'price': '99.00',
-      'priceCurrency': 'USD'
-    }
-  };
-
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    'itemListElement': [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://mnqe.com"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Product Overview",
-        "item": "https://mnqe.com/product"
-      }
-    ]
-  };
 
   return (
     <>

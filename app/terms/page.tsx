@@ -7,6 +7,25 @@ import Footer from '@/components/Footer';
 import FadeIn from '@/components/FadeIn';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://mnqe.com/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Terms of Service',
+      item: 'https://mnqe.com/terms',
+    },
+  ],
+};
+
 export default function TermsPage() {
   const [activeSection, setActiveSection] = useState('acceptance');
 
@@ -32,25 +51,6 @@ export default function TermsPage() {
         behavior: 'smooth',
       });
     }
-  };
-
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: 'https://mnqe.com/',
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Terms of Service',
-        item: 'https://mnqe.com/terms',
-      },
-    ],
   };
 
   return (

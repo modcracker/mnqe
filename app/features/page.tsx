@@ -23,6 +23,25 @@ interface FeatureItem {
   visualComponent: React.ReactNode;
 }
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    {
+      '@type': 'ListItem',
+      'position': 1,
+      'name': 'Home',
+      'item': 'https://mnqe.com'
+    },
+    {
+      '@type': 'ListItem',
+      'position': 2,
+      'name': 'Features',
+      'item': 'https://mnqe.com/features'
+    }
+  ]
+};
+
 export default function FeaturesPage() {
   const FEATURES: FeatureItem[] = [
     {
@@ -228,25 +247,6 @@ export default function FeaturesPage() {
       )
     }
   ];
-
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    'itemListElement': [
-      {
-        '@type': 'ListItem',
-        'position': 1,
-        'name': 'Home',
-        'item': 'https://mnqe.com'
-      },
-      {
-        '@type': 'ListItem',
-        'position': 2,
-        'name': 'Features',
-        'item': 'https://mnqe.com/features'
-      }
-    ]
-  };
 
   return (
     <>

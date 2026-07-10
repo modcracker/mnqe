@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { name: 'Features', href: '/features' },
   { name: 'Product', href: '/product' },
   { name: 'Pricing', href: '/pricing' },
+  { name: 'Monique & MNQE Hub', href: '/monique' },
   { name: 'About', href: '/about' },
   { name: 'Customers', href: '/customers' },
   { name: 'Contact', href: '/contact' },

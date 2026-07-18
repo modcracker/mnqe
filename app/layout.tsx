@@ -1,39 +1,39 @@
-import type {Metadata} from 'next';
-import { Inter, Space_Grotesk } from 'next/font/google';
-import './globals.css'; // Global styles
-import BackToTop from '@/components/BackToTop';
-import PageProgressBar from '@/components/PageProgressBar';
+import type { Metadata } from "next";
+import { Inter, Space_Grotesk } from "next/font/google";
+import "./globals.css";
 
 const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-sans',
-  display: 'swap',
+  subsets: ["latin"],
+  variable: "--font-sans",
 });
 
 const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  variable: '--font-display',
-  display: 'swap',
+  subsets: ["latin"],
+  variable: "--font-display",
 });
 
-const getMetadataBase = (): string => {
-  const urlString = process.env.APP_URL || 'https://mnqe.com';
-  try {
-    if (urlString.startsWith('http://') || urlString.startsWith('https://')) {
-      return new URL(urlString).origin;
-    }
-    return `https://${urlString}`;
-  } catch {
-    return 'https://mnqe.com';
-  }
-};
-
 export const metadata: Metadata = {
-  title: 'Buy MNQE Domain | Premium Monique Vanity Domain for Sale',
-  description: 'Buy MNQE domain today! Secure MNQE.com, the ultimate Monique vanity domain and ultra-rare 4-letter LLLL .com domain for sale, currently showcasing an elite analytics platform.',
-  metadataBase: new URL(getMetadataBase()),
+  metadataBase: new URL("https://www.mnqe.com"),
+  title: {
+    default: "MNQE.com | Monique Vanity Name & Premium 4-Letter Domain Asset",
+    template: "%s | MNQE.com"
+  },
+  description: "Acquire MNQE.com, a rare 4-letter LLLL .com domain. Perfect as a premium personal vanity brand for 'Monique', or a high-growth corporate corporate identity in technology, luxury fashion, and biotech.",
+  keywords: [
+    "MNQE",
+    "mnqe.com",
+    "Monique domain",
+    "4-letter domain",
+    "premium .com domain for sale",
+    "vanity domain asset",
+    "buy LLLL .com",
+    "Monique vanity name",
+    "domain escrow acquisition",
+    "Monique brand asset",
+    "premium corporate domain"
+  ],
   alternates: {
-    canonical: '/',
+    canonical: "/",
   },
   robots: {
     index: true,
@@ -47,38 +47,33 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Buy MNQE Domain | Premium Monique Vanity Domain for Sale',
-    description: 'Buy MNQE domain today! Secure MNQE.com, the ultimate Monique vanity domain and ultra-rare 4-letter LLLL .com domain for sale.',
-    url: '/',
-    siteName: 'MNQE Analytics',
-    images: [
-      {
-        url: '/opengraph-image',
-        width: 1200,
-        height: 630,
-        alt: 'MNQE.com Premium Analytics Domain Showcase',
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
+    title: "MNQE.com | Monique Vanity Name & Premium 4-Letter Domain Asset",
+    description: "Acquire MNQE.com, a rare 4-letter LLLL .com domain. Perfect as a premium personal vanity brand for 'Monique', or a high-growth corporate corporate identity in technology, luxury fashion, and biotech.",
+    url: "https://www.mnqe.com",
+    siteName: "MNQE.com",
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Buy MNQE Domain | Premium Monique Vanity Domain for Sale',
-    description: 'Buy MNQE domain today! Secure MNQE.com, the ultimate Monique vanity domain and ultra-rare 4-letter LLLL .com domain for sale.',
-    images: ['/opengraph-image'],
+    card: "summary_large_image",
+    title: "MNQE.com | Monique Vanity Name & Premium 4-Letter Domain Asset",
+    description: "Acquire MNQE.com, a rare 4-letter LLLL .com domain. Perfect as a premium personal vanity brand for 'Monique', or a high-growth corporate corporate identity in technology, luxury fashion, and biotech.",
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
+  }
 };
 
-export default function RootLayout({children}: {children: React.ReactNode}) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} scroll-smooth`}>
-      <body className="bg-[#0B0F19] text-[#F2F2F5] antialiased" suppressHydrationWarning>
-        <PageProgressBar />
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+      <body className="bg-slate-950 text-slate-100 antialiased font-sans min-h-screen">
         {children}
-        <BackToTop />
       </body>
     </html>
   );
 }
-

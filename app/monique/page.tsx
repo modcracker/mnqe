@@ -237,9 +237,19 @@ export default function MoniqueHubPage() {
                     <Award className="w-5 h-5" />
                   </div>
                   <h3 className="font-display font-bold text-lg text-white mb-3">The Power of 4-Letter Monograms</h3>
-                  <p className="text-xs text-gray-400 leading-relaxed">
+                  <p className="text-xs text-gray-400 leading-relaxed mb-4">
                     With alphabet size constraints, LLLL.com domain assets represent elite global status. spelled names like <strong>MNQE</strong> are highly memorable, easily spellable, and hold absolute market liquidity.
                   </p>
+                  
+                  <div className="p-3.5 rounded-lg bg-[#121829] border border-[#6D5DFC]/20 space-y-1.5 mt-2">
+                    <h4 className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
+                      Biotech & Luxury Prestige
+                    </h4>
+                    <p className="text-[11px] text-gray-400 leading-normal">
+                      Modern biotechnology groups and high-fashion luxury houses leverage short, authoritative 4-letter monograms to project ultimate longevity and tier-one confidence. Spelled monograms command unparalleled institutional gravity, serving as global trust anchors for elite portfolios and high-barrier markets.
+                    </p>
+                  </div>
                 </div>
                 <div className="pt-4 text-[10px] font-mono text-[#6D5DFC] font-bold uppercase tracking-wider">
                   456,976 total assets globally
